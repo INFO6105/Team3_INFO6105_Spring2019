@@ -1,9 +1,7 @@
-# Final project readme here
+# NewsClassification
 
-This will consist of 3 folders:
-- Code
-  - You may include seperate folder for your pipeline and dockerized files inside this folder.
-- Report
-- Data
+1. [Fake News Dataset](https://www.kaggle.com/anthonyc1/fake-news-classifier-final-project/data)
+2. [Bias Comments Dataset](https://www.kaggle.com/c/jigsaw-unintended-bias-in-toxicity-classification/data)
+3. [Toxic Comments Dataset](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data)
 
-You may or may not have sub folders in each folder.
+
