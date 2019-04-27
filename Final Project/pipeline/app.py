@@ -3,11 +3,11 @@ from flask import Flask
 from flask import redirect
 from flask import render_template
 from flask import request
+import os 
 
 # Custom Imports 
 # 'model' folder contains all the custom classes (This is the model in MVC architecture)
 from model.news import Article
-
 # 'machinelearning' folder contains all the ML Models and Pipeline code
 from machinelearning.pipeline import Pipeline
 
@@ -46,20 +46,20 @@ def handle_data():
 
     p = Pipeline(article, vectors, PATH)
     result = p.beginProcess()
-    resultString = "Fake vs Real Classifer Result: <b><i>" +result["isReal"] + "</b></i><br> Toxicity Classifier Result: <b><i>" + result['isToxic'] + "</b></i><br> Similarity Measure: <b><i>" + result['similarity'] + "</b></i>"
-    return render_template("result.html",result = resultString);
+    # resultString = "Fake vs Real Classifer Result: <b><i>" +result["isReal"] + "</b></i><br> Toxicity Classifier Result: <b><i>" + result['isToxic'] + "</b></i><br> Similarity Measure: <b><i>" + result['similarity'] + "</b></i>"
+    diffRes = "<input type='text' class='result' value=' " + result["isReal"] + "' disabled><br/>"
+    toxRes = "<input type='text' class='result' value=' " + result["isToxic"] + "' disabled><br/>"
+    simRes = "<textarea class='result-area' disabled>" + result["similarity"] + "</textarea><br/>"
+    return render_template("result.html", diffRes = diffRes, toxRes = toxRes, simRes = simRes)
 
 
 # Main Function
 if __name__ == "__main__":
     
-    PATH = PATH.split("/")
-    PATH.pop()
-    PATH = '/'.join(PATH)
-    PATH = 'D:/Academic/Data Science/NewsClassifier'
-    print("PATH:" + PATH)
-    vectors['news'] = pickle.load(open(str(PATH + '/vectors/News/vector-2.pl'),"rb"))
-    vectors['toxic'] = pickle.load(open(str(PATH + '/vectors/Toxic/vector-1.toxic'),"rb"))
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+    print(dir_path)
+    vectors['news'] = pickle.load(open(str(dir_path + '/vectors/News/vector-2.pl'),"rb"))   
+    vectors['toxic'] = pickle.load(open(str(dir_path + '/vectors/Toxic/vector-1.toxic'),"rb"))
 
     app.run()
    

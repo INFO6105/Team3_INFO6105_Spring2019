@@ -1,15 +1,348 @@
 <html>
 <style>
-    body {
-        max-width: 1180px;
-        width: 98%;
-        margin: 0px auto;
+    * {
+        box-sizing: border-box;
+    }
+
+    footer {
+        background: none;
+        background-color: rgba(236, 231, 231, 0.74);
+        opacity: 0.80;
+        height: 70px;
+        font-family: 'Open Sans', sans-serif;
+        color: rgb(75, 72, 72);
+        padding: 20px;
         text-align: center;
-        padding-top: 2%;
+        opacity: 0.5;
+
+    }
+
+    html {
+        margin: 0;
+        padding: 0;
+    }
+
+    .article {
+        font-size: 20px;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(https://images.pexels.com/photos/586339/pexels-photo-586339.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500s) no-repeat;
+        background-size: cover;
+        color: black;
+        font-family: "open sans";
+        height: 200vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    /* ------------------------ NAVBAR ----------------*/
+
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        color: white;
+        background: rgba(0, 0, 0, 0.2)
+    }
+
+    header div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: Pacifico;
+        margin: 0 2rem;
+    }
+
+    header div i {
+        font-size: 2rem;
+        margin: 1rem;
+    }
+
+
+    header nav {
+        padding: 1rem 2rem;
+    }
+
+    nav ul li {
+        list-style: none;
+        display: inline;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 5px;
+    }
+
+    nav li a {
+        padding: 1rem;
+        margin: 1rem;
+        text-decoration: none;
+        color: white;
+        transition: all 250ms ease-in;
+    }
+
+    nav li a:hover {
+        background: rgba(255, 255, 255, .3);
+        color: black;
+    }
+
+
+
+    /* ------------------------ TOP SECTION ----------------*/
+
+    .titles {
+        color: white;
+        text-align: center;
+        width: 50vw;
+        margin: 0 auto;
+    }
+
+    .titles h1 {
+        font-family: Pacifico;
+        font-size: 5rem;
+        margin-bottom: 0;
+        text-shadow: 1px 1px 0 black;
+
+    }
+
+    .titles p {
+        letter-spacing: 3px;
+        text-shadow: 1px 1px 0 black;
+    }
+
+    /* ------------------------ BOT SECTION ----------------*/
+
+
+
+    .container-boxes {
+        margin: 0 auto;
+        padding: 30px;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+        max-width: 80vw;
+    }
+
+    .box {
+        background: rgba(255, 255, 255, .5);
+        margin: 1rem;
+        padding: .5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 350px;
+        max-height: 230px;
+        min-height: 180px;
+        transition: all 250ms ease-out;
+    }
+
+    .box:hover {
+        background: rgba(255, 255, 255, .7);
+        transform: translateY(-20%);
+    }
+
+    .box a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .icon {
+        font-size: 3rem;
+        padding: 1rem;
+    }
+
+    .text h3 {
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        margin-bottom: 0;
+    }
+
+    .text p {
+        margin-top: 1rem;
+        line-height: 1.5rem;
+        text-align: left;
+    }
+
+    .text {
+        padding: .5rem;
+    }
+
+
+    /* MEDIAQUERIES */
+
+
+    @media (max-width: 1160px) {
+        .icon {
+            font-size: 2rem;
+            padding: 0.5rem;
+        }
+
+        .text h3 {
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 0;
+            font-size: 1rem;
+        }
+
+        .text p {
+            margin-top: 1rem;
+            line-height: 1.5rem;
+            text-align: left;
+            font-size: .8rem;
+        }
+
+        nav li a:hover {
+            background: none;
+            color: black;
+        }
+    }
+
+
+    @media (max-width: 850px) {
+        body {
+            height: 100%;
+        }
+
+        .container-boxes {
+            flex-direction: column;
+
+        }
+
+        .box:hover {
+            background: rgba(255, 255, 255, .7);
+            transform: none;
+        }
+
+        .titles h1 {
+            font-size: 3rem;
+        }
+    }
+
+
+    /* ------------------------ SUBMIT BUTTON   ----------------*/
+
+    .submit-button-wrapper {
+        width: 100%;
+        text-align: center;
+    }
+
+    .submit-button {
+        height: 50px;
+        width: 70px;
+        background-color: rgba(243, 201, 12, 0.966);
+        border-color: #615d5d;
+        border-radius: 30px;
+        color: black;
+        text-align: center;
+        font-size: 18px;
+        font-family: 'Lato', sans-serif;
+        cursor: pointer;
+        outline: none;
+        width: 20%;
+        opacity: 0.7;
+    }
+
+    .submit-button:hover {
+        background-color: rgba(245, 201, 7, 0.568);
+        opacity: 0.50;
+
+    }
+
+    .submit-button:active {
+        background-color: rgb(85, 79, 79);
+        box-shadow: 0 5px rgb(161, 155, 155);
+        transform: translateY(4px);
+    }
+
+
+
+    .divider {
+        width: 100px;
+        height: auto;
+        display: inline-block;
+    }
+
+
+
+    table {
+        align-self: center;
+    }
+
+
+    .paragraphform {
+        font-family: 'Lato', sans-serif;
+        font-size: 20px;
+    }
+
+
+    .paragraphforminput {
+        height: 30px;
+    }
+
+    tr td:first-child {
+        width: 200px;
+    }
+
+    tr {
+        line-height: 4rem;
+    }
+
+    .result {
+        font-size: 20pt;
+        height: 60px;
+        border-radius: 20px;
+        background-color: #a8a7a7;
+        opacity: 0.55;
+        color: black;
+        margin: 10px 10px;
+        padding: 10px;
+    }
+
+    .result-area {
+        font-size: 20pt;
+        min-height: 300px;
+        overflow-y: scroll;
+        border-radius: 20px;
+        background-color: #a8a7a7;
+        opacity: 0.55;
+        color: black;
+        padding: 10px;
     }
 </style>
 
 <body>
+    <section class="titles">
+
+        <h1>Detect Fake News - Classification Result</h1>
+        <p><i>Don't believe everything you read on internet just because there's a picture with a quote next to it -
+                George Washington</i></p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>Real vs. Fake Classifier Result</p>
+        {% autoescape false %}
+        {{diffRes}}
+        {% endautoescape %}
+        <br>
+        <br>
+        <br>
+        <p>Toxicity Classifier Result</p>
+        {% autoescape false %}
+        {{toxRes}}
+        {% endautoescape %}
+        <br>
+        <br>
+        <br>
+        <p>Similarity Measure</p>
+        {% autoescape false %}
+        {{simRes}}
+        {% endautoescape %}
+
+    </section>
+
     <h2> Classification Result.</h2>
     {% autoescape false %}
     {{result}}

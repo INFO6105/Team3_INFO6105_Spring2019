@@ -54,7 +54,7 @@ class Pipeline(object) :
 
     def toxicDatasetClassifier(self, article, vectorizer) :
         # Load Model
-        model = pickle.load(open(str(self.root + "/models/Toxic/model-1.toxic"),"rb"))
+        model = pickle.load(open(str(self.root + "/model/models/Toxic/model-1.toxic"),"rb"))
 
         # Vectorize
         text = vectorizer.transform([article.content])

@@ -1,0 +1,95 @@
+_____________________________________________________________________________________________________________________
+
+                                            Running Application on Heroku 
+
+_____________________________________________________________________________________________________________________
+
+*************************** Install Heroku CLI ***************************
+
+For Windows, download Heroku CLI from the below link:
+
+- https://devcenter.heroku.com/articles/heroku-cli
+
+
+For Mac, run the below command on your terminal
+
+- $ brew tap heroku/brew && brew install heroku
+
+
+For Ubuntu, run the below command on your terminal
+
+- $ sudo snap install --classic heroku
+
+
+For ARM and BSD, you must have node and npm installed already.
+
+- $ npm install -g heroku
+
+
+
+*************************** Verify the version ***************************
+
+$ heroku --version
+
+
+*************************** Login to Heroku ***************************
+
+$ heroku login -i
+
+
+*************************** Change the directory to application folder and create the application ***************************
+
+$ cd ~/<application_name>
+
+$ heroku create
+
+
+
+_____________________________________________________________________________________________________________________
+
+                                   Deploying Application on Heroku with Git  
+_____________________________________________________________________________________________________________________
+
+The following example demonstrates initializing a Git repository for an app that lives in the application directory:
+
+********************** Tracking your app in Git **********************
+
+$ cd myapp
+
+$ git init
+
+$ git add .
+
+$ git commit -m "Message"
+
+
+********************* Creating a Heroku remote and confirm that a remote named heroku has been set for your app *********************
+
+$ heroku create
+
+$ git remote -v
+
+
+********************* For an existing Heroku App *********************
+
+$ heroku git:remote -a thawing-inlet-61413
+
+
+********************* Renaming the remotes *********************
+
+$ git remote rename heroku heroku-staging
+
+
+********************* Deploying code to your Git *********************
+
+$ git push heroku master
+
+
+********************* Deploying from a branch besides master *********************
+
+$ git push heroku <local_repository_name>:master
+
+
+
+
+
