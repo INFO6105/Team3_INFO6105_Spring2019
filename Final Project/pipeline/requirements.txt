@@ -12,7 +12,7 @@ Jinja2==2.10
 jmespath==0.9.4
 matplotlib==3.0.2
 mistune==0.8.4
-nltk==3.4.1
+nltk==3.4.5
 numpy==1.15.4
 pandas==0.24.0
 scikit-learn==0.20.2
